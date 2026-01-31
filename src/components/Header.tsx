@@ -30,6 +30,24 @@ export function Header() {
                     </div>
                 </Link>
 
+                {/* Desktop Navigation */}
+                <nav className="hidden md:flex items-center gap-8">
+                    {[
+                        { label: "Sobre", href: "/sobre" },
+                        { label: "Áreas de Atuação", href: "/#areas-de-atuacao" },
+                        { label: "Feedbacks", href: "/#feedbacks" },
+                        { label: "Contato", href: "/#contato" }
+                    ].map((item) => (
+                        <Link
+                            key={item.label}
+                            href={item.href}
+                            className="text-sm uppercase tracking-widest text-gray-300 hover:text-gold transition-colors"
+                        >
+                            {item.label}
+                        </Link>
+                    ))}
+                </nav>
+
                 {/* Desktop Action Button (Keep external for visibility or hide? User asked for menu to be same as mobile) 
                     On mobile, "Fale Agora" is inside the menu. 
                     I will keep "Fale Agora" visible on Desktop as it's a primary CTA, 
@@ -47,7 +65,7 @@ export function Header() {
 
                 {/* Menu Button (Visible on ALL screens now) */}
                 <button
-                    className="text-gold flex items-center gap-2"
+                    className="md:hidden text-gold flex items-center gap-2"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
                     <span className="sr-only">Menu</span>
