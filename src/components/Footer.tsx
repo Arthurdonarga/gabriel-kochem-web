@@ -16,7 +16,7 @@ export function Contact() {
                             Conte com nossa experiência para defender seus interesses e garantir seus direitos com eficiência e segurança.
                         </p>
 
-                        <div className="space-y-6">
+                <div className="space-y-6">
                             <div className="flex items-start gap-4">
                                 <Phone className="text-gold w-6 h-6 mt-1" />
                                 <div>
@@ -43,7 +43,7 @@ export function Contact() {
                                     <span className="block text-sm text-gray-500 uppercase tracking-wider mb-1">Localização</span>
                                     <p className="text-white font-serif">
                                         Atendimento Presencial e Online<br />
-                                        Escritório em Foz do Iguaçu - PR
+                                        Marechal Cândido Rondon - PR
                                     </p>
                                 </div>
                             </div>
@@ -73,8 +73,8 @@ export function Contact() {
                         © {new Date().getFullYear()} Gabriel Kochem. OAB/PR 130.601. Todos os direitos reservados.
                     </p>
                     <div className="flex items-center gap-6">
-                        <a href="#" className="text-gray-500 hover:text-gold transition-colors"><Instagram size={20} /></a>
-                        <a href="#" className="text-gray-500 hover:text-gold transition-colors"><Linkedin size={20} /></a>
+                        <a href="https://instagram.com/advgabrielkochem" target="_blank" className="text-gray-500 hover:text-gold transition-colors flex items-center gap-2"><Instagram size={20} /> <span className="text-sm">@advgabrielkochem</span></a>
+                        <a href="https://www.linkedin.com/in/gabriel-matheus-kochem-7a4871369" target="_blank" className="text-gray-500 hover:text-gold transition-colors"><Linkedin size={20} /></a>
                         <a href="#" className="text-gray-500 hover:text-gold transition-colors"><Facebook size={20} /></a>
                     </div>
                 </div>

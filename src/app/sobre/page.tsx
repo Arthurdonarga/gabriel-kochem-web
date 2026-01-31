@@ -55,7 +55,7 @@ export default function AboutPage() {
                                 <Scale className="text-gold" size={20} /> OAB/PR 130.601
                             </div>
                             <div className="flex items-center gap-3 text-gray-400 text-sm tracking-widest uppercase">
-                                <Award className="text-gold" size={20} /> 8 Anos de Exp.
+                                <Award className="text-gold" size={20} /> 2 Anos de Atuação Ativa
                             </div>
                         </div>
                     </motion.div>
@@ -167,7 +167,7 @@ export default function AboutPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                         {[
-                            { title: "Bacharel em Direito", loc: "Universidade de Referência", year: "2018", icon: BookOpen },
+                            { title: "Bacharel em Direito", loc: "Universidade Unioeste", year: "2018", icon: BookOpen },
                             { title: "Pós-Graduação", loc: "Direito Processual Civil", year: "2020", icon: Award },
                             { title: "OAB/PR 130.601", loc: "Ordem dos Advogados do Brasil", year: "Ativo", icon: Scale }
                         ].map((item, i) => (

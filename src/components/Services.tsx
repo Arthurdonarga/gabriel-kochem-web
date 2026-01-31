@@ -23,6 +23,16 @@ export function Services() {
             title: "Direito Imobiliário",
             description: "Segurança jurídica em transações, locações e regularização de imóveis.",
             image: "/images/real-estate-law.png"
+        },
+        {
+            title: "Direito Tributário",
+            description: "Planejamento fiscal e defesa em execuções fiscais para otimização de recursos.",
+            image: "/images/business-law.png"
+        },
+        {
+            title: "Direito Previdenciário",
+            description: "Concessão e revisão de benefícios, garantindo seus direitos junto ao INSS.",
+            image: "/images/civil-law.png"
         }
     ];
 
