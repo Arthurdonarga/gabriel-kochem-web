@@ -67,7 +67,7 @@ export function Contact() {
                     <div>
                         <h2 className="text-4xl font-serif text-white mb-6">
                             Precisa de orientação <br />
-                            <span className="text-gold italic">jurídica especializada?</span>
+                            <span className="text-gold italic">jurídica de excelência?</span>
                         </h2>
                         <p className="text-gray-400 mb-8 max-w-md">
                             Conte com nossa experiência para defender seus interesses e garantir seus direitos com eficiência e segurança.

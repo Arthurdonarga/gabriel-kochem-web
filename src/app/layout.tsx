@@ -14,7 +14,7 @@ const cinzel = Cinzel({
 });
 
 export const metadata: Metadata = {
-  title: "Gabriel Kochem | Advocacia Especializada",
+  title: "Gabriel Kochem | Advocacia de Excelência",
   description: "Assessoria jurídica completa com excelência e comprometimento em diversas áreas do direito.",
 };
 

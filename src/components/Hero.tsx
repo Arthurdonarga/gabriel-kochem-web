@@ -37,7 +37,7 @@ export function Hero() {
                             href="https://wa.me/5545988023369"
                             className="px-10 py-4 bg-gold hover:bg-white text-navy font-bold text-sm uppercase tracking-[0.2em] transition-all duration-300 rounded-sm shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] flex items-center justify-center gap-2 group"
                         >
-                            Falar com Especialista
+                            Falar com Advogado
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </a>
 
