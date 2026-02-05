@@ -11,7 +11,7 @@ export default function AdvogadoMarechal() {
 
             {/* Hero Section */}
             <section className="relative min-h-[80vh] flex items-center justify-center pt-20 overflow-hidden">
-                <div className="absolute inset-0 bg-navy bg-cover bg-center opacity-20" />
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-20" />
                 <div className="absolute inset-0 bg-gradient-to-b from-navy/90 via-navy/80 to-navy" />
 
                 <div className="container mx-auto px-4 relative z-10 text-center">
