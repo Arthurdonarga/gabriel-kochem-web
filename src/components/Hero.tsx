@@ -9,7 +9,7 @@ export function Hero() {
             {/* Background Image / Overlay */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/images/WhatsApp Image 2026-01-26 at 14.15.56.jpeg"
+                    src="/images/fundokoche.jpeg"
                     alt="Gabriel Kochem Background"
                     fill
                     className="object-cover opacity-30"

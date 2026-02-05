@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   description: "Assessoria jurídica completa com excelência e comprometimento em diversas áreas do direito.",
 };
 
+import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,9 +27,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${inter.variable} ${cinzel.variable} antialiased`}
+        className={`${inter.variable} ${cinzel.variable} antialiased relative`}
       >
         {children}
+        <FloatingWhatsApp />
       </body>
     </html>
   );

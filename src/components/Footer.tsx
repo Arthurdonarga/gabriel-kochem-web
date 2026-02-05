@@ -1,6 +1,45 @@
+"use client";
+
 import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook } from "lucide-react";
+import { useState } from "react";
 
 export function Contact() {
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        message: ''
+    });
+    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus('loading');
+
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            if (res.ok) {
+                setStatus('success');
+                setFormData({ name: '', phone: '', email: '', message: '' });
+                setTimeout(() => setStatus('idle'), 5000);
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            console.error(error);
+            setStatus('error');
+        }
+    };
+
     return (
         <footer id="contato" className="bg-navy-dark pt-24 pb-12 border-t border-white/10">
             <div className="container mx-auto px-6">
@@ -16,7 +55,7 @@ export function Contact() {
                             Conte com nossa experiência para defender seus interesses e garantir seus direitos com eficiência e segurança.
                         </p>
 
-                <div className="space-y-6">
+                        <div className="space-y-6">
                             <div className="flex items-start gap-4">
                                 <Phone className="text-gold w-6 h-6 mt-1" />
                                 <div>
@@ -53,16 +92,57 @@ export function Contact() {
                     {/* Contact Form Placeholder */}
                     <div className="bg-navy p-8 md:p-10 border border-white/5 rounded-sm">
                         <h3 className="text-2xl font-serif text-white mb-6">Envie uma Mensagem</h3>
-                        <form className="space-y-4">
+                        <form onSubmit={handleSubmit} className="space-y-4">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <input type="text" placeholder="Nome" className="bg-navy-light border border-white/10 p-4 text-white focus:border-gold outline-none transition-colors rounded-sm" />
-                                <input type="tel" placeholder="Telefone" className="bg-navy-light border border-white/10 p-4 text-white focus:border-gold outline-none transition-colors rounded-sm" />
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    placeholder="Nome"
+                                    required
+                                    className="bg-navy-light border border-white/10 p-4 text-white focus:border-gold outline-none transition-colors rounded-sm"
+                                />
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    value={formData.phone}
+                                    onChange={handleChange}
+                                    placeholder="Telefone"
+                                    className="bg-navy-light border border-white/10 p-4 text-white focus:border-gold outline-none transition-colors rounded-sm"
+                                />
                             </div>
-                            <input type="email" placeholder="Email" className="w-full bg-navy-light border border-white/10 p-4 text-white focus:border-gold outline-none transition-colors rounded-sm" />
-                            <textarea rows={4} placeholder="Descreva brevemente seu caso" className="w-full bg-navy-light border border-white/10 p-4 text-white focus:border-gold outline-none transition-colors rounded-sm resize-none"></textarea>
-                            <button type="button" className="w-full bg-gold text-navy font-bold uppercase tracking-widest py-4 hover:bg-white transition-colors">
-                                Enviar Solicitação
+                            <input
+                                type="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                placeholder="Email"
+                                required
+                                className="w-full bg-navy-light border border-white/10 p-4 text-white focus:border-gold outline-none transition-colors rounded-sm"
+                            />
+                            <textarea
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                rows={4}
+                                placeholder="Descreva brevemente seu caso"
+                                required
+                                className="w-full bg-navy-light border border-white/10 p-4 text-white focus:border-gold outline-none transition-colors rounded-sm resize-none"
+                            ></textarea>
+                            <button
+                                type="submit"
+                                disabled={status === 'loading'}
+                                className="w-full bg-gold text-navy font-bold uppercase tracking-widest py-4 hover:bg-white transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                            >
+                                {status === 'loading' ? 'Enviando...' : 'Enviar Solicitação'}
                             </button>
+                            {status === 'success' && (
+                                <p className="text-green-500 text-center mt-2">Mensagem enviada com sucesso!</p>
+                            )}
+                            {status === 'error' && (
+                                <p className="text-red-500 text-center mt-2">Erro ao enviar. Tente novamente.</p>
+                            )}
                         </form>
                     </div>
                 </div>
