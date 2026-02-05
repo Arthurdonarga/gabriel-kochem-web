@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Linkedin } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export function Contact() {
@@ -200,7 +200,7 @@ export function Contact() {
                     <div className="flex items-center gap-6">
                         <a href="https://instagram.com/advgabrielkochem" target="_blank" className="text-gray-500 hover:text-gold transition-colors flex items-center gap-2"><Instagram size={20} /> <span className="text-sm">@advgabrielkochem</span></a>
                         <a href="https://www.linkedin.com/in/gabriel-matheus-kochem-7a4871369" target="_blank" className="text-gray-500 hover:text-gold transition-colors"><Linkedin size={20} /></a>
-                        <a href="#" className="text-gray-500 hover:text-gold transition-colors"><Facebook size={20} /></a>
+
                     </div>
                 </div>
             </div>
