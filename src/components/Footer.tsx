@@ -8,7 +8,8 @@ export function Contact() {
         name: '',
         phone: '',
         email: '',
-        message: ''
+        message: '',
+        company: '' // Honeypot field
     });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [captcha, setCaptcha] = useState({ num1: 0, num2: 0, answer: '' });
@@ -46,7 +47,7 @@ export function Contact() {
 
             if (res.ok) {
                 setStatus('success');
-                setFormData({ name: '', phone: '', email: '', message: '' });
+                setFormData({ name: '', phone: '', email: '', message: '', company: '' });
                 setTimeout(() => setStatus('idle'), 5000);
             } else {
                 setStatus('error');
@@ -147,6 +148,17 @@ export function Contact() {
                                 required
                                 className="w-full bg-navy-light border border-white/10 p-4 text-white focus:border-gold outline-none transition-colors rounded-sm resize-none"
                             ></textarea>
+
+                            {/* Honeypot Field - Hidden from users, visible to bots */}
+                            <input
+                                type="text"
+                                name="company"
+                                value={formData.company}
+                                onChange={handleChange}
+                                style={{ display: 'none' }}
+                                tabIndex={-1}
+                                autoComplete="off"
+                            />
 
                             {/* Simple Captcha */}
                             <div className="flex items-center gap-4 bg-navy-light border border-white/10 p-3 rounded-sm">
