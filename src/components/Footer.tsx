@@ -48,6 +48,7 @@ export function Contact() {
             if (res.ok) {
                 setStatus('success');
                 setFormData({ name: '', phone: '', email: '', message: '', company: '' });
+                window.open('/recebemos-sua-mensagem', '_blank');
                 setTimeout(() => setStatus('idle'), 5000);
             } else {
                 setStatus('error');
