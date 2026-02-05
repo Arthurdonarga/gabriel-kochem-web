@@ -1,7 +1,7 @@
 "use client";
 
 import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function Contact() {
     const [formData, setFormData] = useState({
@@ -11,13 +11,30 @@ export function Contact() {
         message: ''
     });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+    const [captcha, setCaptcha] = useState({ num1: 0, num2: 0, answer: '' });
+
+    useEffect(() => {
+        const n1 = Math.floor(Math.random() * 10);
+        const n2 = Math.floor(Math.random() * 10);
+        setCaptcha({ num1: n1, num2: n2, answer: '' });
+    }, [status === 'success', status === 'error']); // Regenerate on reset
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    const handleCaptchaChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setCaptcha({ ...captcha, answer: e.target.value });
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (parseInt(captcha.answer) !== captcha.num1 + captcha.num2) {
+            alert("Por favor, resolva a conta matemática corretamente para provar que você não é um robô.");
+            return;
+        }
+
         setStatus('loading');
 
         try {
@@ -130,6 +147,22 @@ export function Contact() {
                                 required
                                 className="w-full bg-navy-light border border-white/10 p-4 text-white focus:border-gold outline-none transition-colors rounded-sm resize-none"
                             ></textarea>
+
+                            {/* Simple Captcha */}
+                            <div className="flex items-center gap-4 bg-navy-light border border-white/10 p-3 rounded-sm">
+                                <span className="text-white text-sm font-medium whitespace-nowrap">
+                                    Quanto é {captcha.num1} + {captcha.num2}?
+                                </span>
+                                <input
+                                    type="number"
+                                    value={captcha.answer}
+                                    onChange={handleCaptchaChange}
+                                    placeholder="?"
+                                    className="w-20 bg-navy-dark border border-white/10 p-2 text-white text-center focus:border-gold outline-none transition-colors rounded-sm ml-auto"
+                                    required
+                                />
+                            </div>
+
                             <button
                                 type="submit"
                                 disabled={status === 'loading'}
