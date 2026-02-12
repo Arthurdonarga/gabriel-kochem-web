@@ -35,7 +35,7 @@ export function Hero() {
                     <div className="flex flex-col md:flex-row gap-6 w-full md:w-auto animate-fade-in-up delay-300">
                         <a
                             href="https://wa.me/5545988023369"
-                            className="px-10 py-4 bg-gold hover:bg-white text-navy font-bold text-sm uppercase tracking-[0.2em] transition-all duration-300 rounded-sm shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] flex items-center justify-center gap-2 group"
+                            className="px-10 py-4 bg-green-600 hover:bg-green-700 text-white font-bold text-sm uppercase tracking-[0.2em] transition-all duration-300 rounded-sm shadow-[0_0_20px_rgba(22,163,74,0.3)] hover:shadow-[0_0_40px_rgba(22,163,74,0.6)] flex items-center justify-center gap-2 group"
                         >
                             Falar com Advogado
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

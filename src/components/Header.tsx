@@ -57,7 +57,7 @@ export function Header() {
                     <a
                         href="https://wa.me/5545988023369"
                         target="_blank"
-                        className="px-6 py-2 bg-gold text-navy font-bold uppercase text-xs tracking-widest hover:bg-white transition-all duration-300 rounded-sm"
+                        className="px-6 py-2 bg-green-600 text-white font-bold uppercase text-xs tracking-widest hover:bg-green-700 transition-all duration-300 rounded-sm"
                     >
                         Fale Agora
                     </a>
@@ -98,7 +98,7 @@ export function Header() {
                     */}
                     <a
                         href="https://wa.me/5545988023369"
-                        className="md:hidden mt-4 w-full py-4 text-center bg-gold text-navy font-bold uppercase tracking-widest"
+                        className="md:hidden mt-4 w-full py-4 text-center bg-green-600 text-white font-bold uppercase tracking-widest"
                     >
                         Fale Agora
                     </a>
