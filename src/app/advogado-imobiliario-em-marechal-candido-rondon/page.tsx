@@ -30,10 +30,10 @@ export default function AdvogadoImobiliarioMarechal() {
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-300">
                         <a
-                            href="https://wa.me/5545999887766?text=Preciso de um advogado imobiliário em Marechal Cândido Rondon"
+                            href="https://wa.me/5545988023369?text=Preciso de um advogado imobiliário em Marechal Cândido Rondon"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group relative px-8 py-4 bg-gold text-navy font-bold rounded-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]"
+                            className="group relative px-8 py-4 bg-green-600 text-white font-bold rounded-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(22,163,74,0.4)]"
                         >
                             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                             <span className="relative flex items-center gap-2">
@@ -122,10 +122,10 @@ export default function AdvogadoImobiliarioMarechal() {
                                 A compra de um imóvel é um grande investimento. Não assine nada sem uma análise jurídica prévia (Due Diligence) para garantir que o imóvel não possui dívidas ou impedimentos.
                             </p>
                             <a
-                                href="https://wa.me/5545999887766?text=Quero analisar um contrato imobiliário"
+                                href="https://wa.me/5545988023369?text=Quero analisar um contrato imobiliário"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-6 py-3 border border-gold text-gold rounded-lg hover:bg-gold hover:text-navy transition-all duration-300 font-semibold"
+                                className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white border border-green-600 rounded-lg hover:bg-green-700 hover:text-white transition-all duration-300 font-semibold"
                             >
                                 Analisar Contrato
                             </a>
@@ -144,10 +144,10 @@ export default function AdvogadoImobiliarioMarechal() {
                         Um imóvel irregular perde valor de mercado. Conte conosco para regularizar sua propriedade.
                     </p>
                     <a
-                        href="https://wa.me/5545999887766?text=Olá, preciso de um advogado imobiliário"
+                        href="https://wa.me/5545988023369?text=Olá, preciso de um advogado imobiliário"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-gold to-yellow-500 text-navy font-bold text-xl rounded-full shadow-lg shadow-gold/20 hover:shadow-gold/40 hover:scale-105 transition-all duration-300"
+                        className="inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-green-600 to-green-500 text-white font-bold text-xl rounded-full shadow-lg shadow-green-600/20 hover:shadow-green-600/40 hover:scale-105 transition-all duration-300"
                     >
                         <Phone className="w-6 h-6" />
                         Falar com Especialista em Imóveis

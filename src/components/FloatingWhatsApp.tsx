@@ -15,7 +15,7 @@ export function FloatingWhatsApp() {
 
     return (
         <Link
-            href="https://wa.me/5548999999999" // Replace with actual number if known, or ask user.
+            href="https://wa.me/5545988023369"
             target="_blank"
             rel="noopener noreferrer"
             className="fixed bottom-6 right-6 z-50 group"

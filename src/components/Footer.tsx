@@ -201,6 +201,7 @@ export function Contact() {
                     <div className="flex items-center gap-6">
                         <a href="https://instagram.com/advgabrielkochem" target="_blank" className="text-gray-500 hover:text-gold transition-colors flex items-center gap-2"><Instagram size={20} /> <span className="text-sm">@advgabrielkochem</span></a>
                         <a href="https://www.linkedin.com/in/gabriel-matheus-kochem-7a4871369" target="_blank" className="text-gray-500 hover:text-gold transition-colors"><Linkedin size={20} /></a>
+                        <a href="https://wa.me/5545988023369" target="_blank" className="text-gray-500 hover:text-gold transition-colors"><Phone size={20} /></a>
 
                     </div>
                 </div>

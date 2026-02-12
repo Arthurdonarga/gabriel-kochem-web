@@ -30,10 +30,10 @@ export default function AdvogadoCriminalistaMarechal() {
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-300">
                         <a
-                            href="https://wa.me/5545999887766?text=URGENTE: Preciso de um advogado criminalista em Marechal Cândido Rondon"
+                            href="https://wa.me/5545988023369?text=URGENTE: Preciso de um advogado criminalista em Marechal Cândido Rondon"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group relative px-8 py-4 bg-red-800 text-white font-bold rounded-lg overflow-hidden transition-all hover:scale-105 hover:bg-red-700 shadow-lg shadow-red-900/30 border-2 border-white/30 animate-pulse hover:animate-none"
+                            className="group relative px-8 py-4 bg-green-600 text-white font-bold rounded-lg overflow-hidden transition-all hover:scale-105 hover:bg-green-700 shadow-lg shadow-green-900/30 border-2 border-white/30 animate-pulse hover:animate-none"
                         >
                             <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                             <span className="relative flex items-center gap-2">
@@ -134,10 +134,10 @@ export default function AdvogadoCriminalistaMarechal() {
                         Atendemos emergências 24 horas por dia em Marechal Cândido Rondon e região.
                     </p>
                     <a
-                        href="https://wa.me/5545999887766?text=URGENTE: Preciso de um advogado criminalista"
+                        href="https://wa.me/5545988023369?text=URGENTE: Preciso de um advogado criminalista"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-10 py-5 bg-red-700 text-white font-bold text-xl rounded-full shadow-lg shadow-red-900/30 hover:bg-red-600 hover:scale-105 transition-all duration-300"
+                        className="inline-flex items-center gap-2 px-10 py-5 bg-green-700 text-white font-bold text-xl rounded-full shadow-lg shadow-green-900/30 hover:bg-green-600 hover:scale-105 transition-all duration-300"
                     >
                         <Phone className="w-6 h-6" />
                         Ligar para o Plantão Agora

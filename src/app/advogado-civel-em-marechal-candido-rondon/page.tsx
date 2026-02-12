@@ -30,10 +30,10 @@ export default function AdvogadoCivelMarechal() {
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-300">
                         <a
-                            href="https://wa.me/5545999887766?text=Preciso de um advogado cível em Marechal Cândido Rondon"
+                            href="https://wa.me/5545988023369?text=Preciso de um advogado cível em Marechal Cândido Rondon"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group relative px-8 py-4 bg-gold text-navy font-bold rounded-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]"
+                            className="group relative px-8 py-4 bg-green-600 text-white font-bold rounded-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(22,163,74,0.4)]"
                         >
                             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                             <span className="relative flex items-center gap-2">
@@ -115,10 +115,10 @@ export default function AdvogadoCivelMarechal() {
 
                         <div className="mt-10 pt-8 border-t border-white/10 text-center md:text-left">
                             <a
-                                href="https://wa.me/5545999887766?text=Tenho uma dúvida sobre direito cível"
+                                href="https://wa.me/5545988023369?text=Tenho uma dúvida sobre direito cível"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-gold font-bold hover:text-white transition-colors inline-flex items-center gap-2"
+                                className="text-green-500 font-bold hover:text-white transition-colors inline-flex items-center gap-2"
                             >
                                 Tire suas dúvidas agora <CheckCircle2 className="w-5 h-5" />
                             </a>
@@ -137,10 +137,10 @@ export default function AdvogadoCivelMarechal() {
                         Não deixe suas questões cíveis sem resolução. Conte com nossa expertise em Marechal Cândido Rondon.
                     </p>
                     <a
-                        href="https://wa.me/5545999887766?text=Olá, preciso de um advogado civel"
+                        href="https://wa.me/5545988023369?text=Olá, preciso de um advogado civel"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-10 py-5 bg-gold text-navy font-bold text-xl rounded-full shadow-lg hover:bg-yellow-400 hover:scale-105 transition-all duration-300"
+                        className="inline-flex items-center gap-2 px-10 py-5 bg-green-600 text-white font-bold text-xl rounded-full shadow-lg hover:bg-green-500 hover:scale-105 transition-all duration-300"
                     >
                         <Phone className="w-6 h-6" />
                         Falar com Advogado Cível

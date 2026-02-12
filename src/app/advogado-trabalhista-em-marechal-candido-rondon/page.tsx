@@ -30,10 +30,10 @@ export default function AdvogadoTrabalhistaMarechal() {
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-300">
                         <a
-                            href="https://wa.me/5545999887766?text=Preciso de um advogado trabalhista em Marechal Cândido Rondon"
+                            href="https://wa.me/5545988023369?text=Preciso de um advogado trabalhista em Marechal Cândido Rondon"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group relative px-8 py-4 bg-gold text-navy font-bold rounded-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]"
+                            className="group relative px-8 py-4 bg-green-600 text-white font-bold rounded-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(22,163,74,0.4)]"
                         >
                             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                             <span className="relative flex items-center gap-2">
@@ -122,10 +122,10 @@ export default function AdvogadoTrabalhistaMarechal() {
                                 Muitas vezes, empresas calculam as verbas rescisórias incorretamente. Nossa equipe realiza uma análise minuciosa para garantir que nenhum centavo seu fique para trás.
                             </p>
                             <a
-                                href="https://wa.me/5545999887766?text=Quero conferir meu cálculo rescisório"
+                                href="https://wa.me/5545988023369?text=Quero conferir meu cálculo rescisório"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-6 py-3 border border-gold text-gold rounded-lg hover:bg-gold hover:text-navy transition-all duration-300 font-semibold"
+                                className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white border border-green-600 rounded-lg hover:bg-green-700 hover:text-white transition-all duration-300 font-semibold"
                             >
                                 Solicitar Análise
                             </a>
@@ -144,10 +144,10 @@ export default function AdvogadoTrabalhistaMarechal() {
                         O prazo para entrar com ação trabalhista é de 2 anos após a saída. Não perca tempo.
                     </p>
                     <a
-                        href="https://wa.me/5545999887766?text=Olá, preciso de um advogado trabalhista"
+                        href="https://wa.me/5545988023369?text=Olá, preciso de um advogado trabalhista"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-gold to-yellow-500 text-navy font-bold text-xl rounded-full shadow-lg shadow-gold/20 hover:shadow-gold/40 hover:scale-105 transition-all duration-300"
+                        className="inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-green-600 to-green-500 text-white font-bold text-xl rounded-full shadow-lg shadow-green-600/20 hover:shadow-green-600/40 hover:scale-105 transition-all duration-300"
                     >
                         <Phone className="w-6 h-6" />
                         Falar com Advogado Trabalhista
