@@ -50,13 +50,35 @@ export function Hero() {
                     </div>
                 </div>
 
-                {/* Scale Animation */}
-                <div className="flex justify-center items-center order-1 lg:order-2 w-full">
-                    <div className="w-64 h-64 md:w-80 md:h-80 lg:w-[500px] lg:h-[500px] relative animate-fade-in-up">
-                        <ScaleOfJustice className="w-full h-full text-gold drop-shadow-[0_0_25px_rgba(212,175,55,0.2)]" />
+                {/* Hero Visual: Scale & Photo Mix */}
+                <div className="flex justify-center items-center order-1 lg:order-2 w-full mt-12 lg:mt-0 px-4 sm:px-8">
+                    <div className="w-full max-w-[320px] sm:max-w-[400px] md:max-w-[450px] lg:max-w-[500px] aspect-[4/5] relative animate-fade-in-up group">
+
+                        {/* Background Photo - Com Cor, Maior (aspect-ratio mais vertical) e mais completa */}
+                        <div className="absolute inset-0 rounded-[2rem] lg:rounded-[3rem] overflow-hidden transition-all duration-1000 z-0 border border-gold/20 shadow-[0_0_40px_rgba(212,175,55,0.1)]">
+                            <Image
+                                src="/images/gabriel-2.jpg"
+                                alt="Gabriel Kochem"
+                                fill
+                                className="object-cover object-top transition-transform duration-1000 group-hover:scale-105"
+                                priority
+                            />
+                            {/* Inner gradient to blend bottom edge with the dark background */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-navy w-full h-full via-navy/20 to-transparent z-10 pointer-events-none" />
+                        </div>
+
+                        {/* Scale of Justice - Mais Menor, mais para baixo e à esquerda, com desfoque branco ao fundo */}
+                        <div className="absolute -left-8 -bottom-8 sm:-left-12 sm:-bottom-10 md:-left-16 md:-bottom-12 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 z-20 pointer-events-none transition-transform duration-1000 group-hover:scale-105">
+
+                            {/* Desfoque branco no fundo da balança */}
+                            <div className="absolute inset-0 bg-white/50 blur-2xl rounded-full scale-[0.6] opacity-90 transition-opacity duration-1000"></div>
+
+                            {/* Ícone da Balança */}
+                            <ScaleOfJustice className="relative z-10 w-full h-full text-gold drop-shadow-[0_0_25px_rgba(212,175,55,0.5)] group-hover:drop-shadow-[0_0_40px_rgba(212,175,55,0.8)]" />
+                        </div>
+
                     </div>
                 </div>
-
             </div>
         </section>
     );

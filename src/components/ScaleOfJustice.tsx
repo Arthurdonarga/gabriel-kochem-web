@@ -9,7 +9,7 @@ interface ScaleOfJusticeProps {
 export function ScaleOfJustice({ className = "w-full h-full text-gold" }: ScaleOfJusticeProps) {
     // Animation configuration
     const beamAnimation = {
-        rotate: [2, -2, 2], // Gentle sway
+        rotate: [6, -6, 6], // More pronounced sway
         transition: {
             duration: 5,
             ease: "easeInOut" as const,
@@ -20,7 +20,7 @@ export function ScaleOfJustice({ className = "w-full h-full text-gold" }: ScaleO
 
     // Counter-rotation for pans to keep them vertical while beam rotates
     const panAnimation = {
-        rotate: [-2, 2, -2],
+        rotate: [-6, 6, -6],
         transition: {
             duration: 5,
             ease: "easeInOut" as const,

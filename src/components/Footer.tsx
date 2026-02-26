@@ -2,6 +2,7 @@
 
 import { Mail, Phone, MapPin, Instagram, Linkedin } from "lucide-react";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export function Contact() {
     const [formData, setFormData] = useState({
@@ -108,88 +109,20 @@ export function Contact() {
                         </div>
                     </div>
 
-                    {/* Contact Form Placeholder */}
-                    <div className="bg-navy p-8 md:p-10 border border-white/5 rounded-sm">
-                        <h3 className="text-2xl font-serif text-white mb-6">Envie uma Mensagem</h3>
-                        <form onSubmit={handleSubmit} className="space-y-4">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <input
-                                    type="text"
-                                    name="name"
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    placeholder="Nome"
-                                    required
-                                    className="bg-navy-light border border-white/10 p-4 text-white focus:border-gold outline-none transition-colors rounded-sm"
-                                />
-                                <input
-                                    type="tel"
-                                    name="phone"
-                                    value={formData.phone}
-                                    onChange={handleChange}
-                                    placeholder="Telefone"
-                                    className="bg-navy-light border border-white/10 p-4 text-white focus:border-gold outline-none transition-colors rounded-sm"
-                                />
+                    {/* Imagens (Galeria Reduzida) */}
+                    <div className="grid grid-cols-2 gap-4 h-full content-center">
+                        {/* Photo */}
+                        <div className="relative aspect-[3/4] sm:aspect-square overflow-hidden rounded-sm group">
+                            <Image src="/images/gabriel-1.jpg" alt="Gabriel Kochem" fill className="object-cover object-[center_30%] grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105" />
+                            <div className="absolute inset-0 bg-navy/40 group-hover:bg-transparent transition-all duration-700 pointer-events-none"></div>
+                        </div>
+                        {/* Initials block */}
+                        <div className="relative aspect-[3/4] sm:aspect-square overflow-hidden rounded-sm bg-navy-light flex items-center justify-center border border-white/5 group hover:border-gold/30 transition-all duration-700">
+                            <div className="text-center">
+                                <span className="font-serif text-gold/30 group-hover:text-gold text-5xl block mb-2 transition-colors duration-700">GK</span>
+                                <span className="text-gray-500 group-hover:text-gold/80 text-xs uppercase tracking-[0.2em] transition-colors duration-700">Advocacia</span>
                             </div>
-                            <input
-                                type="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                placeholder="Email"
-                                required
-                                className="w-full bg-navy-light border border-white/10 p-4 text-white focus:border-gold outline-none transition-colors rounded-sm"
-                            />
-                            <textarea
-                                name="message"
-                                value={formData.message}
-                                onChange={handleChange}
-                                rows={4}
-                                placeholder="Descreva brevemente seu caso"
-                                required
-                                className="w-full bg-navy-light border border-white/10 p-4 text-white focus:border-gold outline-none transition-colors rounded-sm resize-none"
-                            ></textarea>
-
-                            {/* Honeypot Field - Hidden from users, visible to bots */}
-                            <input
-                                type="text"
-                                name="company"
-                                value={formData.company}
-                                onChange={handleChange}
-                                style={{ display: 'none' }}
-                                tabIndex={-1}
-                                autoComplete="off"
-                            />
-
-                            {/* Simple Captcha */}
-                            <div className="flex items-center gap-4 bg-navy-light border border-white/10 p-3 rounded-sm">
-                                <span className="text-white text-sm font-medium whitespace-nowrap">
-                                    Quanto é {captcha.num1} + {captcha.num2}?
-                                </span>
-                                <input
-                                    type="number"
-                                    value={captcha.answer}
-                                    onChange={handleCaptchaChange}
-                                    placeholder="?"
-                                    className="w-20 bg-navy-dark border border-white/10 p-2 text-white text-center focus:border-gold outline-none transition-colors rounded-sm ml-auto"
-                                    required
-                                />
-                            </div>
-
-                            <button
-                                type="submit"
-                                disabled={status === 'loading'}
-                                className="w-full bg-gold text-navy font-bold uppercase tracking-widest py-4 hover:bg-white transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
-                            >
-                                {status === 'loading' ? 'Enviando...' : 'Enviar Solicitação'}
-                            </button>
-                            {status === 'success' && (
-                                <p className="text-green-500 text-center mt-2">Mensagem enviada com sucesso!</p>
-                            )}
-                            {status === 'error' && (
-                                <p className="text-red-500 text-center mt-2">Erro ao enviar. Tente novamente.</p>
-                            )}
-                        </form>
+                        </div>
                     </div>
                 </div>
 
