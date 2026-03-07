@@ -10,7 +10,6 @@ export function Header() {
     const menuItems = [
         { label: "Sobre", href: "/sobre" },
         { label: "Áreas de Atuação", href: "/#areas-de-atuacao" },
-        { label: "Feedbacks", href: "/#feedbacks" },
         { label: "Contato", href: "/#contato" }
     ];
 
@@ -35,7 +34,6 @@ export function Header() {
                     {[
                         { label: "Sobre", href: "/sobre" },
                         { label: "Áreas de Atuação", href: "/#areas-de-atuacao" },
-                        { label: "Feedbacks", href: "/#feedbacks" },
                         { label: "Contato", href: "/#contato" }
                     ].map((item) => (
                         <Link
