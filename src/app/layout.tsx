@@ -14,11 +14,13 @@ const cinzel = Cinzel({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.gabrielkochem.adv.br"),
   title: "Gabriel Kochem | Advocacia de Excelência",
   description: "Assessoria jurídica completa com excelência e comprometimento em diversas áreas do direito.",
 };
 
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { CanonicalHeader } from "@/components/CanonicalHeader";
 
 export default function RootLayout({
   children,
@@ -30,6 +32,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${cinzel.variable} antialiased relative`}
       >
+        <CanonicalHeader />
         {children}
         <FloatingWhatsApp />
         <Script
