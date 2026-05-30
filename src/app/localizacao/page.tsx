@@ -1,12 +1,22 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Contact as Footer } from "@/components/Footer";
 import { MapPin, Phone, Mail, Clock, ExternalLink, Navigation, Compass, Shield, CheckCircle } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
 export default function LocationPage() {
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 1600);
+        return () => clearTimeout(timer);
+    }, []);
+
     // Fade-in animation variants
     const fadeInUp: any = {
         hidden: { opacity: 0, y: 30 },
@@ -24,7 +34,44 @@ export default function LocationPage() {
     };
 
     return (
-        <main className="bg-navy min-h-screen text-white overflow-hidden selection:bg-gold selection:text-navy">
+        <main className="bg-navy min-h-screen text-white overflow-hidden selection:bg-gold selection:text-navy relative">
+            {/* Cinematic Premium Entrance Transition Overlay */}
+            <AnimatePresence>
+                {isLoading && (
+                    <motion.div
+                        initial={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+                        className="fixed inset-0 z-50 bg-navy-dark flex flex-col items-center justify-center"
+                    >
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.95 }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            className="text-center space-y-4"
+                        >
+                            {/* Animated GK Logo */}
+                            <div className="w-24 h-24 mx-auto rounded-full border border-gold/20 flex items-center justify-center bg-navy-light/40 relative shadow-[0_0_50px_rgba(212,175,55,0.05)]">
+                                <motion.span 
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: [0, 1, 0.5, 1] }}
+                                    transition={{ repeat: Infinity, duration: 2 }}
+                                    className="font-serif text-gold text-4xl tracking-widest block"
+                                >
+                                    GK
+                                </motion.span>
+                                <div className="absolute inset-0 rounded-full border-t border-gold animate-spin" style={{ animationDuration: '3s' }} />
+                            </div>
+                            <div>
+                                <h2 className="text-xl font-serif text-white tracking-[0.3em] uppercase">GABRIEL KOCHEM</h2>
+                                <span className="text-[0.7rem] text-gray-500 tracking-[0.3em] uppercase block mt-1">Assessoria Jurídica de Excelência</span>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
             {/* Navigation Header */}
             <Header />
 
