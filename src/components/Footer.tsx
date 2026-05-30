@@ -100,8 +100,8 @@ export function Contact() {
                                 <MapPin className="text-gold w-6 h-6 mt-1" />
                                 <div>
                                     <span className="block text-sm text-gray-500 uppercase tracking-wider mb-1">Localização</span>
-                                    <p className="text-white font-serif">
-                                        Atendimento Presencial e Online<br />
+                                    <p className="text-white font-serif text-sm">
+                                        Rua 7 de Setembro, 949 - Centro<br />
                                         Marechal Cândido Rondon - PR
                                     </p>
                                 </div>

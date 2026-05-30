@@ -45,3 +45,19 @@ h5,
 h6 {
   font-family: var(--font-serif);
 }
+
+@keyframes shine {
+  0% {
+    left: -150%;
+  }
+  50% {
+    left: -150%;
+  }
+  100% {
+    left: 250%;
+  }
+}
+
+.group:hover .animate-shine-hover {
+  animation: shine 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}

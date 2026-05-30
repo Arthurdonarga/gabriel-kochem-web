@@ -1,0 +1,12 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /login
+Disallow: /dashboard
+Disallow: /dashboard/*
+
+# Host
+Host: https://www.gabrielkochem.adv.br
+
+# Sitemaps
+Sitemap: https://www.gabrielkochem.adv.br/sitemap.xml

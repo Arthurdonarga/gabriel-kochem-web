@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import { ScaleOfJustice } from "./ScaleOfJustice";
 
 export function Hero() {
@@ -32,10 +32,10 @@ export function Hero() {
                         Defesa intransigente dos seus direitos em todas as esferas.
                     </p>
 
-                    <div className="flex flex-col md:flex-row gap-6 w-full md:w-auto animate-fade-in-up delay-300">
+                    <div className="flex flex-col sm:flex-row flex-wrap gap-4 w-full sm:w-auto animate-fade-in-up delay-300 justify-center lg:justify-start">
                         <a
                             href="https://wa.me/5545988023369"
-                            className="px-10 py-4 bg-green-600 hover:bg-green-700 text-white font-bold text-sm uppercase tracking-[0.2em] transition-all duration-300 rounded-sm shadow-[0_0_20px_rgba(22,163,74,0.3)] hover:shadow-[0_0_40px_rgba(22,163,74,0.6)] flex items-center justify-center gap-2 group"
+                            className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold text-sm uppercase tracking-[0.2em] transition-all duration-300 rounded-sm shadow-[0_0_20px_rgba(22,163,74,0.3)] hover:shadow-[0_0_40px_rgba(22,163,74,0.6)] flex items-center justify-center gap-2 group shrink-0"
                         >
                             Falar com Advogado
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -43,9 +43,19 @@ export function Hero() {
 
                         <Link
                             href="/areas-de-atuacao"
-                            className="px-10 py-4 border border-white/20 hover:border-gold text-white hover:text-gold font-bold text-sm uppercase tracking-[0.2em] transition-all duration-300 rounded-sm hover:bg-navy-light"
+                            className="px-8 py-4 border border-white/20 hover:border-gold text-white hover:text-gold font-bold text-sm uppercase tracking-[0.2em] transition-all duration-300 rounded-sm hover:bg-navy-light flex items-center justify-center shrink-0"
                         >
                             Conhecer Áreas
+                        </Link>
+
+                        <Link
+                            href="/localizacao"
+                            className="relative overflow-hidden px-8 py-4 bg-gold hover:bg-white text-navy font-bold text-sm uppercase tracking-[0.2em] transition-all duration-700 ease-out rounded-sm shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_40px_rgba(255,255,255,0.5)] flex items-center justify-center gap-2 group shrink-0"
+                        >
+                            {/* Shine overlay */}
+                            <span className="absolute top-0 -left-[150%] h-full w-[150%] z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none animate-shine-hover" />
+                            <MapPin className="w-4 h-4 text-navy transition-transform duration-700 group-hover:scale-110" />
+                            <span>Conheça nosso Escritório</span>
                         </Link>
                     </div>
                 </div>
