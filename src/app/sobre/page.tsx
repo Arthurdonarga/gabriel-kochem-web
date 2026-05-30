@@ -54,9 +54,6 @@ export default function AboutPage() {
                             <div className="flex items-center gap-3 text-gray-400 text-sm tracking-widest uppercase">
                                 <Scale className="text-gold" size={20} /> OAB/PR 130.601
                             </div>
-                            <div className="flex items-center gap-3 text-gray-400 text-sm tracking-widest uppercase">
-                                <Award className="text-gold" size={20} /> 2 Anos de Atuação Ativa
-                            </div>
                         </div>
                     </motion.div>
 

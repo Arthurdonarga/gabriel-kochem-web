@@ -6,68 +6,220 @@ import { Contact as Footer } from "@/components/Footer";
 import { MapPin, Phone, Mail, Clock, ExternalLink, Navigation, Compass, Shield, CheckCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { ScaleOfJustice } from "@/components/ScaleOfJustice";
+
 
 export default function LocationPage() {
-    const [isLoading, setIsLoading] = useState(true);
+    const [loadingPhase, setLoadingPhase] = useState(0); // 0=logo, 1=carregando, 2=icons, 3=done
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 1600);
-        return () => clearTimeout(timer);
+        // Phase 0: Logo GK sobe (já visível)
+        const t1 = setTimeout(() => setLoadingPhase(1), 1200);  // Após 1.2s → "Carregando localização..."
+        const t2 = setTimeout(() => setLoadingPhase(2), 2600);  // Após 2.6s → Pin + Balança lado a lado
+        const t3 = setTimeout(() => setLoadingPhase(3), 4200);  // Após 4.2s → Fecha overlay
+        return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
     }, []);
 
-    // Fade-in animation variants
-    const fadeInUp: any = {
-        hidden: { opacity: 0, y: 30 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-    };
-
+    // Stagger container for main page elements
     const staggerContainer: any = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.2
+                staggerChildren: 0.2,
+                delayChildren: 0.1
             }
         }
     };
 
+    // Extreme Premium Entrance Variants with Cubic-Bezier easing and Blur
+    const headerTitleVar: any = {
+        hidden: { opacity: 0, y: -40, filter: "blur(8px)" },
+        visible: {
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+            transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] }
+        }
+    };
+
+    const cardLeftVar: any = {
+        hidden: { opacity: 0, x: -60, filter: "blur(12px)" },
+        visible: { 
+            opacity: 1, 
+            x: 0, 
+            filter: "blur(0px)",
+            transition: { duration: 1.4, ease: [0.16, 1, 0.3, 1] } 
+        }
+    };
+
+    const cardRightVar: any = {
+        hidden: { opacity: 0, x: 60, scale: 0.95, filter: "blur(12px)" },
+        visible: { 
+            opacity: 1, 
+            x: 0, 
+            scale: 1,
+            filter: "blur(0px)",
+            transition: { duration: 1.6, ease: [0.16, 1, 0.3, 1] } 
+        }
+    };
+
+    const isLoading = loadingPhase < 3;
+
     return (
         <main className="bg-navy min-h-screen text-white overflow-hidden selection:bg-gold selection:text-navy relative">
-            {/* Cinematic Premium Entrance Transition Overlay */}
+            {/* Cinematic Multi-Phase Premium Entrance */}
             <AnimatePresence>
                 {isLoading && (
                     <motion.div
                         initial={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+                        transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
                         className="fixed inset-0 z-50 bg-navy-dark flex flex-col items-center justify-center"
                     >
+                        {/* Background ambient glow */}
+                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gold/3 rounded-full blur-[150px]" />
+                        </div>
+
+                        {/* ═══ PHASE 0: GK Logo Ball rises gently ═══ */}
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.95 }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
-                            className="text-center space-y-4"
+                            initial={{ opacity: 0, y: 40, scale: 0.85 }}
+                            animate={{ 
+                                opacity: loadingPhase >= 1 ? [1, 1, 0.6] : [0, 1],
+                                y: loadingPhase >= 1 ? [0, -30] : [40, 0],
+                                scale: loadingPhase >= 1 ? [1, 0.7] : [0.85, 1]
+                            }}
+                            transition={{ 
+                                duration: loadingPhase >= 1 ? 0.8 : 1,
+                                ease: [0.16, 1, 0.3, 1]
+                            }}
+                            className="relative z-10 text-center"
                         >
-                            {/* Animated GK Logo */}
-                            <div className="w-24 h-24 mx-auto rounded-full border border-gold/20 flex items-center justify-center bg-navy-light/40 relative shadow-[0_0_50px_rgba(212,175,55,0.05)]">
-                                <motion.span 
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: [0, 1, 0.5, 1] }}
-                                    transition={{ repeat: Infinity, duration: 2 }}
-                                    className="font-serif text-gold text-4xl tracking-widest block"
+                            <div className="w-28 h-28 mx-auto rounded-full border border-gold/15 flex items-center justify-center bg-navy-light/60 relative shadow-[0_0_60px_rgba(212,175,55,0.12)]">
+                                <motion.span
+                                    animate={{ opacity: [0.4, 1, 0.6, 1], scale: [0.96, 1, 0.98, 1] }}
+                                    transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                                    className="font-serif text-gold text-5xl tracking-widest block font-medium"
                                 >
                                     GK
                                 </motion.span>
-                                <div className="absolute inset-0 rounded-full border-t border-gold animate-spin" style={{ animationDuration: '3s' }} />
+                                <div className="absolute inset-2 rounded-full border border-gold/5 animate-pulse" />
+                                <div className="absolute inset-0 rounded-full border-t-2 border-gold animate-spin" style={{ animationDuration: '4s' }} />
+                                <div className="absolute -inset-1.5 rounded-full border-b border-gold-light/40 animate-spin" style={{ animationDuration: '6s', animationDirection: 'reverse' }} />
                             </div>
-                            <div>
-                                <h2 className="text-xl font-serif text-white tracking-[0.3em] uppercase">GABRIEL KOCHEM</h2>
-                                <span className="text-[0.7rem] text-gray-500 tracking-[0.3em] uppercase block mt-1">Assessoria Jurídica de Excelência</span>
-                            </div>
+
+                            {/* GK Legend text (always visible in phase 0) */}
+                            <AnimatePresence>
+                                {loadingPhase === 0 && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -10 }}
+                                        transition={{ duration: 0.6, ease: "easeOut" }}
+                                        className="mt-5"
+                                    >
+                                        <h2 className="text-xl font-serif text-white tracking-[0.3em] uppercase">GABRIEL KOCHEM</h2>
+                                        <span className="text-[0.7rem] text-gray-500 tracking-[0.3em] uppercase block mt-1">Assessoria Jurídica de Excelência</span>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
                         </motion.div>
+
+                        {/* ═══ PHASE 1: "Carregando localização..." with pin point ═══ */}
+                        <AnimatePresence>
+                            {loadingPhase === 1 && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
+                                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                    exit={{ opacity: 0, y: -15, filter: "blur(4px)" }}
+                                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                                    className="absolute bottom-[38%] text-center flex flex-col items-center gap-3"
+                                >
+                                    <motion.div
+                                        animate={{ y: [0, -6, 0] }}
+                                        transition={{ repeat: Infinity, duration: 1.2, ease: "easeInOut" }}
+                                    >
+                                        <MapPin className="w-8 h-8 text-gold drop-shadow-[0_0_12px_rgba(212,175,55,0.5)]" />
+                                    </motion.div>
+                                    <span className="text-sm text-gray-400 tracking-[0.25em] uppercase font-light">
+                                        Carregando localização
+                                        <motion.span
+                                            animate={{ opacity: [0, 1, 0] }}
+                                            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                                        >...</motion.span>
+                                    </span>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+
+                        {/* ═══ PHASE 2: MapPin & Scale of Justice side by side - Premium Reveal ═══ */}
+                        <AnimatePresence>
+                            {loadingPhase === 2 && (
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0, scale: 1.1, filter: "blur(8px)" }}
+                                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                                    className="absolute inset-0 flex items-center justify-center"
+                                >
+                                    <div className="flex items-center gap-12 md:gap-20">
+                                        {/* MapPin - enters from left */}
+                                        <motion.div
+                                            initial={{ opacity: 0, x: -80, scale: 0.5, rotate: -15 }}
+                                            animate={{ opacity: 1, x: 0, scale: 1, rotate: 0 }}
+                                            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+                                            className="flex flex-col items-center gap-3"
+                                        >
+                                            <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center shadow-[0_0_40px_rgba(212,175,55,0.15)]">
+                                                <motion.div
+                                                    animate={{ y: [0, -4, 0] }}
+                                                    transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                                                >
+                                                    <MapPin className="w-10 h-10 md:w-12 md:h-12 text-gold drop-shadow-[0_0_20px_rgba(212,175,55,0.6)]" />
+                                                </motion.div>
+                                            </div>
+                                            <motion.span
+                                                initial={{ opacity: 0, y: 8 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                transition={{ delay: 0.5, duration: 0.6 }}
+                                                className="text-[0.65rem] text-gold/70 uppercase tracking-[0.3em] font-semibold"
+                                            >
+                                                Localização
+                                            </motion.span>
+                                        </motion.div>
+
+                                        {/* Center divider line - grows from center */}
+                                        <motion.div
+                                            initial={{ scaleY: 0, opacity: 0 }}
+                                            animate={{ scaleY: 1, opacity: 1 }}
+                                            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+                                            className="w-px h-20 md:h-28 bg-gradient-to-b from-transparent via-gold/40 to-transparent origin-center"
+                                        />
+
+                                        {/* Scale of Justice - enters from right */}
+                                        <motion.div
+                                            initial={{ opacity: 0, x: 80, scale: 0.5, rotate: 15 }}
+                                            animate={{ opacity: 1, x: 0, scale: 1, rotate: 0 }}
+                                            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+                                            className="flex flex-col items-center gap-3"
+                                        >
+                                            <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center shadow-[0_0_40px_rgba(212,175,55,0.15)]">
+                                                <ScaleOfJustice className="w-14 h-14 md:w-16 md:h-16 text-gold drop-shadow-[0_0_20px_rgba(212,175,55,0.6)]" />
+                                            </div>
+                                            <motion.span
+                                                initial={{ opacity: 0, y: 8 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                transition={{ delay: 0.6, duration: 0.6 }}
+                                                className="text-[0.65rem] text-gold/70 uppercase tracking-[0.3em] font-semibold"
+                                            >
+                                                Justiça
+                                            </motion.span>
+                                        </motion.div>
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                     </motion.div>
                 )}
             </AnimatePresence>
@@ -86,8 +238,8 @@ export default function LocationPage() {
                 <div className="container mx-auto px-6 relative z-10 text-center">
                     <motion.div
                         initial="hidden"
-                        animate="visible"
-                        variants={fadeInUp}
+                        animate={isLoading ? "hidden" : "visible"}
+                        variants={headerTitleVar}
                         className="max-w-3xl mx-auto"
                     >
                         <span className="text-gold uppercase tracking-[0.3em] text-xs font-semibold mb-4 block">
@@ -111,12 +263,12 @@ export default function LocationPage() {
                     <motion.div
                         variants={staggerContainer}
                         initial="hidden"
-                        animate="visible"
+                        animate={isLoading ? "hidden" : "visible"}
                         className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start"
                     >
                         {/* Left Column: Office details (5 cols on lg) */}
                         <motion.div
-                            variants={fadeInUp}
+                            variants={cardLeftVar}
                             className="lg:col-span-5 space-y-8"
                         >
                             {/* Card 1: Main Location Info */}
@@ -221,7 +373,7 @@ export default function LocationPage() {
 
                         {/* Right Column: Google Maps IFrame (7 cols on lg) */}
                         <motion.div
-                            variants={fadeInUp}
+                            variants={cardRightVar}
                             className="lg:col-span-7 h-full min-h-[450px] md:min-h-[600px] w-full relative group"
                         >
                             {/* Decorative geometric borders representing structure and law */}
