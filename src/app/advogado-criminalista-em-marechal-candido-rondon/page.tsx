@@ -1,4 +1,8 @@
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+    title: "Advogado Criminalista em Marechal Cândido Rondon | Gabriel Kochem",
+    description: "Defesa criminal especializada em Marechal Cândido Rondon. Atendimento sigiloso e estratégico. Proteja sua liberdade."
+};
 import { Header } from "@/components/Header";
 import { Contact } from "@/components/Footer";
 import { CheckCircle2, MapPin, Gavel, Siren, Lock, Phone } from "lucide-react";

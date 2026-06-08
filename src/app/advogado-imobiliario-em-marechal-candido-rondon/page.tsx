@@ -1,4 +1,8 @@
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+    title: "Advogado Imobiliário em Marechal Cândido Rondon | Gabriel Kochem",
+    description: "Especialista em Direito Imobiliário em Marechal Cândido Rondon. Contratos, usucapião, regularização de imóveis e despejo."
+};
 import { Header } from "@/components/Header";
 import { Contact } from "@/components/Footer";
 import { CheckCircle2, MapPin, Home, Key, FileText, Phone } from "lucide-react";

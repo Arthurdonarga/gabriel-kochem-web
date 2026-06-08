@@ -1,4 +1,8 @@
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+    title: "Advogado Previdenciário em Marechal Cândido Rondon | Gabriel Kochem",
+    description: "Especialista em Direito Previdenciário em Marechal Cândido Rondon. Planejamento previdenciário e recursos contra o INSS."
+};
 import { Header } from "@/components/Header";
 import { Contact } from "@/components/Footer";
 import { CheckCircle2, MapPin, Landmark, HeartHandshake, Calculator, Phone } from "lucide-react";

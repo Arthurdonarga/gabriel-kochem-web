@@ -1,4 +1,8 @@
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+    title: "Advogado em Marechal Cândido Rondon | Gabriel Kochem",
+    description: "Escritório de advocacia em Marechal Cândido Rondon. Atendimento em diversas áreas do direito para garantir seus direitos."
+};
 import { Header } from "@/components/Header";
 import { Contact } from "@/components/Footer";
 import Link from "next/link";

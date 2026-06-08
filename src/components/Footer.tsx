@@ -3,6 +3,7 @@
 import { Mail, Phone, MapPin, Instagram, Linkedin } from "lucide-react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Contact() {
     const [formData, setFormData] = useState({
@@ -123,6 +124,20 @@ export function Contact() {
                                 <span className="text-gray-500 group-hover:text-gold/80 text-xs uppercase tracking-[0.2em] transition-colors duration-700">Advocacia</span>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                {/* SEO Links Area */}
+                <div className="border-t border-white/5 py-8">
+                    <h3 className="text-white font-serif mb-4 text-center">Nossas Especialidades em Marechal Cândido Rondon</h3>
+                    <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
+                        <Link href="/advogado-civel-em-marechal-candido-rondon" className="hover:text-gold transition-colors">Advogado Cível</Link>
+                        <Link href="/advogado-criminalista-em-marechal-candido-rondon" className="hover:text-gold transition-colors">Advogado Criminalista</Link>
+                        <Link href="/advogado-em-marechal-candido-rondon" className="hover:text-gold transition-colors">Advogado Geral</Link>
+                        <Link href="/advogado-imobiliario-em-marechal-candido-rondon" className="hover:text-gold transition-colors">Advogado Imobiliário</Link>
+                        <Link href="/advogado-inss-em-marechal-candido-rondon" className="hover:text-gold transition-colors">Advogado INSS</Link>
+                        <Link href="/advogado-previdenciario-em-marechal-candido-rondon" className="hover:text-gold transition-colors">Advogado Previdenciário</Link>
+                        <Link href="/advogado-trabalhista-em-marechal-candido-rondon" className="hover:text-gold transition-colors">Advogado Trabalhista</Link>
                     </div>
                 </div>
 

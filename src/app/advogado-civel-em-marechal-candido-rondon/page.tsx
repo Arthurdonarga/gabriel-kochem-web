@@ -1,4 +1,8 @@
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+    title: "Advogado Cível em Marechal Cândido Rondon | Gabriel Kochem",
+    description: "Especialista em Direito Civil em Marechal Cândido Rondon. Atuação em contratos, família, indenizações e mais. Agende uma consulta."
+};
 import { Header } from "@/components/Header";
 import { Contact } from "@/components/Footer";
 import { CheckCircle2, MapPin, Search, FileText, Home, Phone } from "lucide-react";

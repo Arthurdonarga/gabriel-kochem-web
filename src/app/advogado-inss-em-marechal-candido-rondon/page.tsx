@@ -1,4 +1,8 @@
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+    title: "Advogado INSS em Marechal Cândido Rondon | Gabriel Kochem",
+    description: "Especialista em benefícios do INSS em Marechal Cândido Rondon. Aposentadorias, BPC/LOAS, auxílio-doença e pensão por morte."
+};
 import { Header } from "@/components/Header";
 import { Contact } from "@/components/Footer";
 import { CheckCircle2, MapPin, FileX, AlertCircle, FileCheck, Phone } from "lucide-react";

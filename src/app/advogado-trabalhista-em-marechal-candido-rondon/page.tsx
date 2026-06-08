@@ -1,4 +1,8 @@
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+    title: "Advogado Trabalhista em Marechal Cândido Rondon | Gabriel Kochem",
+    description: "Especialista em Direito Trabalhista em Marechal Cândido Rondon. Defesa dos direitos do trabalhador, rescisão e horas extras."
+};
 import { Header } from "@/components/Header";
 import { Contact } from "@/components/Footer";
 import { CheckCircle2, MapPin, Briefcase, Clock, AlertTriangle, Phone } from "lucide-react";
